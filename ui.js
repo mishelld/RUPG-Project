@@ -40,7 +40,8 @@ export default class Renderer {
   }
   renderPokemon(pokemon) {
     this.pokeImage.src = pokemon.image;
-    this.pokeName.innerText = pokemon.name;
+    this.pokeName.innerText =
+      pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
   }
   renderText(text) {
     this.p.innerText = text;
