@@ -1,7 +1,8 @@
 export default class Renderer {
   constructor() {
     this.container = document.querySelector(".container");
-    this.errorbox = document.querySelector(".error p");
+    this.errorbox = document.querySelector(".error");
+    this.errorp = document.querySelector(".error p");
     this.userImage = document.querySelector("header img");
     this.userName = document.querySelector("header h1");
     this.userLocation = document.querySelector("header h3");
@@ -45,8 +46,8 @@ export default class Renderer {
     this.p.innerText = text;
   }
   renderError(error) {
-    this.container.classList.add(".hidden");
-    this.errorbox.classList.remove(".hidden");
-    this.errorbox.innerText = error;
+    this.container.classList.add("hidden");
+    this.errorbox.classList.remove("hidden");
+    this.errorp.innerText = error;
   }
 }

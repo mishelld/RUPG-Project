@@ -85,6 +85,8 @@ button:hover {
 .error {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;

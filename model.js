@@ -11,6 +11,7 @@ export default class Generator {
       return data.results;
     } catch (error) {
       console.error("Error fetching users:", error.message);
+      throw error;
     }
   }
   async getMainAndFriends() {
@@ -32,6 +33,7 @@ export default class Generator {
       return [mainUserData, friendsData];
     } catch (error) {
       console.error("Error fetching users:", error.message);
+      throw error;
     }
   }
   async generateKanyeQuote() {
@@ -44,6 +46,7 @@ export default class Generator {
       return data.quote;
     } catch (error) {
       console.error("Error fetching Kanye Quote:", error.message);
+      throw error;
     }
   }
   async generatePokemon() {
@@ -64,6 +67,7 @@ export default class Generator {
       return pokemon;
     } catch (error) {
       console.error("Error fetching Pokemon:", error.message);
+      throw error;
     }
   }
   async generateText() {
@@ -78,6 +82,7 @@ export default class Generator {
       return data[0];
     } catch (error) {
       console.error("Error fetching Text:", error.message);
+      throw error;
     }
   }
 }

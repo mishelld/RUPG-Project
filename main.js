@@ -16,7 +16,7 @@ async function GenerateData() {
 
     renderer.render(usersData, quote, pokemon, text);
   } catch (error) {
-    renderer.renderError();
+    renderer.renderError(error);
   }
 }
 
