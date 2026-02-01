@@ -46,9 +46,29 @@ class Generator {
       console.error("Error fetching Kanye Quote:", error.message);
     }
   }
+  async generatePokemon() {
+    try {
+      const maxPokemon = 1025;
+      const randomId = Math.floor(Math.random() * maxPokemon) + 1;
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${randomId}`,
+      );
+      if (!response.ok) {
+        throw new Error("Pokemon not found");
+      }
+      const data = await response.json();
+      const pokemon = {
+        name: data.name,
+        image: data.sprites.front_default,
+      };
+      return pokemon;
+    } catch (error) {
+      console.error("Error fetching Pokemon:", error.message);
+    }
+  }
 }
 
 const generator = new Generator();
 
-const users = await generator.generateKanyeQuote();
+const users = await generator.generatePokemon();
 console.log(users);
