@@ -7,8 +7,11 @@ body {
 }
 .img-container {
   border-radius: 50%;
-  width: 50%;
+  width: 40%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .img-container img {
   width: 100%;
@@ -43,4 +46,10 @@ ul {
   flex-direction: column;
   justify-content: space-evenly;
   padding: 0;
+}
+
+.pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
