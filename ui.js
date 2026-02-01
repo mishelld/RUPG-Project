@@ -16,4 +16,8 @@ export default class Renderer {
       list.appendChild(li);
     }
   }
+  renderQuote(quote) {
+    const quoteEl = document.querySelector(".quote p");
+    quoteEl.innerText = quote;
+  }
 }

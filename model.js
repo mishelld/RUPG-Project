@@ -41,7 +41,7 @@ export default class Generator {
         throw new Error("Quote not found");
       }
       const data = await response.json();
-      return data;
+      return data.quote;
     } catch (error) {
       console.error("Error fetching Kanye Quote:", error.message);
     }
