@@ -6,14 +6,18 @@ const renderer = new Renderer();
 const button = document.querySelector("button");
 
 async function GenerateData() {
-  const [usersData, quote, pokemon, text] = await Promise.all([
-    generator.getMainAndFriends(),
-    generator.generateKanyeQuote(),
-    generator.generatePokemon(),
-    generator.generateText(),
-  ]);
+  try {
+    const [usersData, quote, pokemon, text] = await Promise.all([
+      generator.getMainAndFriends(),
+      generator.generateKanyeQuote(),
+      generator.generatePokemon(),
+      generator.generateText(),
+    ]);
 
-  renderer.render(usersData, quote, pokemon, text);
+    renderer.render(usersData, quote, pokemon, text);
+  } catch (error) {
+    renderer.renderError();
+  }
 }
 
 button.addEventListener("click", () => {

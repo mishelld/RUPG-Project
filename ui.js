@@ -1,4 +1,17 @@
 export default class Renderer {
+  constructor() {
+    this.container = document.querySelector(".container");
+    this.errorbox = document.querySelector(".error p");
+    this.userImage = document.querySelector("header img");
+    this.userName = document.querySelector("header h1");
+    this.userLocation = document.querySelector("header h3");
+    this.friendsList = document.querySelector("aside ul");
+    this.quoteEl = document.querySelector(".quote p");
+    this.pokeImage = document.querySelector(".pokemon img");
+    this.pokeName = document.querySelector(".pokemon p");
+    this.p = document.querySelector(".about p");
+  }
+
   render(usersData, quote, pokemon, text) {
     const [mainUserData, friendsData] = usersData;
     this.renderUser(mainUserData);
@@ -8,35 +21,32 @@ export default class Renderer {
     this.renderText(text);
   }
   renderUser(userData) {
-    const image = document.querySelector("header img");
-    const name = document.querySelector("header h1");
-    const location = document.querySelector("header h3");
-    image.src = userData.picture;
-    name.innerText = userData.firstName + " " + userData.lastName;
-    location.innerText = userData.city + ", " + userData.state;
+    this.userImage.src = userData.picture;
+    this.userName.innerText = userData.firstName + " " + userData.lastName;
+    this.userLocation.innerText = userData.city + ", " + userData.state;
   }
   renderFriends(friendsData) {
-    const list = document.querySelector("aside ul");
-    list.innerHTML = "";
+    this.friendsList.innerHTML = "";
     for (const key of Object.keys(friendsData)) {
       const li = document.createElement("li");
       li.innerText =
         friendsData[key].firstName + " " + friendsData[key].lastName;
-      list.appendChild(li);
+      this.friendsList.appendChild(li);
     }
   }
   renderQuote(quote) {
-    const quoteEl = document.querySelector(".quote p");
-    quoteEl.innerText = quote;
+    this.quoteEl.innerText = quote;
   }
   renderPokemon(pokemon) {
-    const image = document.querySelector(".pokemon img");
-    const name = document.querySelector(".pokemon p");
-    image.src = pokemon.image;
-    name.innerText = pokemon.name;
+    this.pokeImage.src = pokemon.image;
+    this.pokeName.innerText = pokemon.name;
   }
   renderText(text) {
-    const p = document.querySelector(".about p");
-    p.innerText = text;
+    this.p.innerText = text;
+  }
+  renderError(error) {
+    this.container.classList.add(".hidden");
+    this.errorbox.classList.remove(".hidden");
+    this.errorbox.innerText = error;
   }
 }

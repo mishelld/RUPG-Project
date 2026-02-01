@@ -81,3 +81,16 @@ button {
 button:hover {
   background-color: #1d2f56;
 }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
