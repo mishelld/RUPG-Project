@@ -66,9 +66,23 @@ class Generator {
       console.error("Error fetching Pokemon:", error.message);
     }
   }
+  async generateText() {
+    try {
+      const response = await fetch(
+        `https://baconipsum.com/api/?type=meat-and-filler`,
+      );
+      if (!response.ok) {
+        throw new Error("Text not found");
+      }
+      const data = await response.json();
+      return data[0];
+    } catch (error) {
+      console.error("Error fetching Text:", error.message);
+    }
+  }
 }
 
 const generator = new Generator();
 
-const users = await generator.generatePokemon();
+const users = await generator.generateText();
 console.log(users);
