@@ -31,6 +31,16 @@ section {
   padding: 10px 10px;
   border-radius: 10px;
 }
+aside {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
 ul {
+  flex: 1;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0;
 }
