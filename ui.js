@@ -1,4 +1,12 @@
 export default class Renderer {
+  render(usersData, quote, pokemon, text) {
+    const [mainUserData, friendsData] = usersData;
+    this.renderUser(mainUserData);
+    this.renderFriends(friendsData);
+    this.renderQuote(quote);
+    this.renderPokemon(pokemon);
+    this.renderText(text);
+  }
   renderUser(userData) {
     const image = document.querySelector("header img");
     const name = document.querySelector("header h1");
