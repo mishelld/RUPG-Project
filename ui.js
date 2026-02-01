@@ -52,7 +52,10 @@ export default class Renderer {
     this.errorp.innerText = error;
   }
   saveUserPage(usersData, quote, pokemon, text) {
+    localStorage.clear();
+    let users = JSON.parse(localStorage.getItem("RUPG-users")) || {};
     const pageData = { usersData, quote, pokemon, text };
-    localStorage.setItem("RUPG-page", JSON.stringify(pageData));
+    users[usersData[0].firstName + " " + usersData[0].lastName] = pageData;
+    localStorage.setItem("RUPG-users", JSON.stringify(users));
   }
 }
