@@ -1,4 +1,4 @@
-class Generator {
+export default class Generator {
   async generateUsers() {
     try {
       const response = await fetch(
@@ -29,7 +29,7 @@ class Generator {
         firstName: f.name.first,
         lastName: f.name.last,
       }));
-      return { mainUserData, friendsData };
+      return [mainUserData, friendsData];
     } catch (error) {
       console.error("Error fetching users:", error.message);
     }
@@ -81,8 +81,3 @@ class Generator {
     }
   }
 }
-
-const generator = new Generator();
-
-const users = await generator.generateText();
-console.log(users);
