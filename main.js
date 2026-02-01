@@ -3,11 +3,13 @@ import Generator from "./model.js";
 const generator = new Generator();
 const renderer = new Renderer();
 
-const button = document.querySelector("button");
-
+const genBtn = document.querySelector("#gen-Btn");
+const saveBtn = document.querySelector("#save-Btn");
+const loadBtn = document.querySelector("#load-Btn");
+let usersData, quote, pokemon, text;
 async function GenerateData() {
   try {
-    const [usersData, quote, pokemon, text] = await Promise.all([
+    [usersData, quote, pokemon, text] = await Promise.all([
       generator.getMainAndFriends(),
       generator.generateKanyeQuote(),
       generator.generatePokemon(),
@@ -20,8 +22,22 @@ async function GenerateData() {
   }
 }
 
-button.addEventListener("click", () => {
+genBtn.addEventListener("click", () => {
   GenerateData();
 });
 
+saveBtn.addEventListener("click", () => {
+  renderer.saveUserPage(usersData, quote, pokemon, text);
+});
+
+loadBtn.addEventListener("click", () => {
+  const savedPage = localStorage.getItem("RUPG-page");
+  const savedUser = JSON.parse(savedPage);
+  renderer.render(
+    savedUser.usersData,
+    savedUser.quote,
+    savedUser.pokemon,
+    savedUser.text,
+  );
+});
 GenerateData();

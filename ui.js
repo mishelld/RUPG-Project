@@ -51,4 +51,8 @@ export default class Renderer {
     this.errorbox.classList.remove("hidden");
     this.errorp.innerText = error;
   }
+  saveUserPage(usersData, quote, pokemon, text) {
+    const pageData = { usersData, quote, pokemon, text };
+    localStorage.setItem("RUPG-page", JSON.stringify(pageData));
+  }
 }
