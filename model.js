@@ -34,10 +34,21 @@ class Generator {
       console.error("Error fetching users:", error.message);
     }
   }
+  async generateKanyeQuote() {
+    try {
+      const response = await fetch(`https://api.kanye.rest`);
+      if (!response.ok) {
+        throw new Error("Quote not found");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching Kanye Quote:", error.message);
+    }
+  }
 }
-/*
+
 const generator = new Generator();
 
-const users = await generator.getMainAndFriends();
+const users = await generator.generateKanyeQuote();
 console.log(users);
-*/
