@@ -1,5 +1,7 @@
 export default class Renderer {
   render(usersData, quote, pokemon, text) {
+    const container = document.querySelector("container");
+    //container.innerHTML = "";
     const [mainUserData, friendsData] = usersData;
     this.renderUser(mainUserData);
     this.renderFriends(friendsData);
@@ -17,6 +19,7 @@ export default class Renderer {
   }
   renderFriends(friendsData) {
     const list = document.querySelector("aside ul");
+    list.innerHTML = "";
     for (const key of Object.keys(friendsData)) {
       const li = document.createElement("li");
       li.innerText =
