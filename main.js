@@ -6,10 +6,12 @@ const renderer = new Renderer();
 const button = document.querySelector("button");
 
 async function GenerateData() {
-  const usersData = await generator.getMainAndFriends();
-  const quote = await generator.generateKanyeQuote();
-  const pokemon = await generator.generatePokemon();
-  const text = await generator.generateText();
+  const [usersData, quote, pokemon, text] = await Promise.all([
+    generator.getMainAndFriends(),
+    generator.generateKanyeQuote(),
+    generator.generatePokemon(),
+    generator.generateText(),
+  ]);
 
   renderer.render(usersData, quote, pokemon, text);
 }

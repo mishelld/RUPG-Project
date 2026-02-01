@@ -1,7 +1,5 @@
 export default class Renderer {
   render(usersData, quote, pokemon, text) {
-    const container = document.querySelector("container");
-    //container.innerHTML = "";
     const [mainUserData, friendsData] = usersData;
     this.renderUser(mainUserData);
     this.renderFriends(friendsData);
