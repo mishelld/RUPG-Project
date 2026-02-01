@@ -20,4 +20,10 @@ export default class Renderer {
     const quoteEl = document.querySelector(".quote p");
     quoteEl.innerText = quote;
   }
+  renderPokemon(pokemon) {
+    const image = document.querySelector(".pokemon img");
+    const name = document.querySelector(".pokemon h1");
+    image.src = pokemon.image;
+    name.innerText = pokemon.name;
+  }
 }
