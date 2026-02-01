@@ -30,9 +30,9 @@ export default class Renderer {
   }
   renderPokemon(pokemon) {
     const image = document.querySelector(".pokemon img");
-    const name = document.querySelector(".pokemon h1");
+    const name = document.querySelector(".pokemon p");
     image.src = pokemon.image;
-    name.innerText += " " + pokemon.name;
+    name.innerText = pokemon.name;
   }
   renderText(text) {
     const p = document.querySelector(".about p");
