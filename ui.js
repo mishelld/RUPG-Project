@@ -7,4 +7,13 @@ export default class Renderer {
     name.innerText = userData.firstName + " " + userData.lastName;
     location.innerText = userData.city + ", " + userData.state;
   }
+  renderFriends(friendsData) {
+    const list = document.querySelector("aside ul");
+    for (const key of Object.keys(friendsData)) {
+      const li = document.createElement("li");
+      li.innerText =
+        friendsData[key].firstName + " " + friendsData[key].lastName;
+      list.appendChild(li);
+    }
+  }
 }
