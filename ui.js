@@ -26,4 +26,8 @@ export default class Renderer {
     image.src = pokemon.image;
     name.innerText = pokemon.name;
   }
+  renderText(text) {
+    const p = document.querySelector(".about p");
+    p.innerText = text;
+  }
 }
