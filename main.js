@@ -44,4 +44,7 @@ saveBtn.addEventListener("click", () => {
 loadBtn.addEventListener("click", () => {
   renderer.showMenu();
 });
-generateData();
+
+document.addEventListener("DOMContentLoaded", () => {
+  generateData();
+});
