@@ -8,8 +8,10 @@ body {
 }
 .container {
   display: flex;
+
   gap: 10px;
 }
+
 h1 {
   font-size: 1.4rem;
   margin: 0;
@@ -28,6 +30,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: #3b5998;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .img-container img {
   width: 100%;
@@ -56,9 +59,14 @@ aside {
 main {
   flex: 3;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   border-radius: 10px;
-  gap: 10px;
+}
+main,
+aside,
+header {
+  padding: 10px;
 }
 section {
   background-color: #ffffff;
@@ -69,7 +77,6 @@ section {
 aside {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 ul {
@@ -78,6 +85,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: 0;
   padding: 0;
 }
 
