@@ -10,8 +10,7 @@ export default class Generator {
       const data = await response.json();
       return data.results;
     } catch (error) {
-      console.error("Error fetching users:", error.message);
-      throw error;
+      throw new Error("Error fetching users", error.message);
     }
   }
   async getMainAndFriends() {
@@ -19,21 +18,20 @@ export default class Generator {
       const users = await this.generateUsers();
       const mainUser = users[0];
       const mainUserData = {
-        firstName: mainUser.name.first,
-        lastName: mainUser.name.last,
-        picture: mainUser.picture.large,
-        state: mainUser.location.state,
-        city: mainUser.location.city,
+        firstName: mainUser.name.first ?? "",
+        lastName: mainUser.name.last ?? "",
+        picture: mainUser.picture.large ?? "",
+        state: mainUser.location.state ?? "",
+        city: mainUser.location.city ?? "",
       };
       const friends = users.slice(1);
       const friendsData = friends.map((f) => ({
-        firstName: f.name.first,
-        lastName: f.name.last,
+        firstName: f.name.first ?? "",
+        lastName: f.name.last ?? "",
       }));
       return [mainUserData, friendsData];
     } catch (error) {
-      console.error("Error fetching users:", error.message);
-      throw error;
+      throw new Error("Error fetching users", error.message);
     }
   }
   async generateKanyeQuote() {
@@ -45,8 +43,7 @@ export default class Generator {
       const data = await response.json();
       return data.quote;
     } catch (error) {
-      console.error("Error fetching Kanye Quote:", error.message);
-      throw error;
+      throw new Error("Error fetching Kanye Quote", error.message);
     }
   }
   async generatePokemon() {
@@ -61,13 +58,12 @@ export default class Generator {
       }
       const data = await response.json();
       const pokemon = {
-        name: data.name,
-        image: data.sprites.front_default,
+        name: data.name ?? "",
+        image: data.sprites.front_default ?? "",
       };
       return pokemon;
     } catch (error) {
-      console.error("Error fetching Pokemon:", error.message);
-      throw error;
+      throw new Error("Error fetching Pokemon", error.message);
     }
   }
   async generateText() {
@@ -81,8 +77,7 @@ export default class Generator {
       const data = await response.json();
       return data[0];
     } catch (error) {
-      console.error("Error fetching Text:", error.message);
-      throw error;
+      throw new Error("Error fetching Text", error.message);
     }
   }
 }

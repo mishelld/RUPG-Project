@@ -23,9 +23,9 @@ async function generateData() {
 }
 function validatePageData({ usersData, quote, pokemon, text }) {
   if (!usersData) throw new Error("User data is missing.");
-  if (!quote) throw new Error("Quote is missing.");
+  if (quote === null) throw new Error("Quote is missing.");
   if (!pokemon) throw new Error("Pokemon is missing.");
-  if (text == null) throw new Error("About text is missing.");
+  if (text === null) throw new Error("About text is missing.");
 }
 
 genBtn.addEventListener("click", () => {
