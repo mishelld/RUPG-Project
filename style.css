@@ -80,12 +80,14 @@ h1 {
   color: #1a233d;
 }
 h3 {
+  font-size: 1.2rem;
   color: #333742;
 }
 p {
   color: #464646;
   margin: 0;
   margin-top: 10px;
+  font-size: 1rem;
 }
 
 /*Images*/
@@ -194,4 +196,10 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }
