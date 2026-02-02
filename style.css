@@ -8,7 +8,6 @@ body {
 }
 .container {
   display: flex;
-
   gap: 10px;
 }
 
@@ -21,6 +20,12 @@ p {
   color: #464646;
   margin: 0;
   margin-top: 10px;
+}
+section {
+  background-color: #ffffff;
+  padding: 15px 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .img-container {
   border-radius: 50%;
@@ -41,6 +46,16 @@ header {
   align-items: center;
   padding: 10px 10px;
 }
+main,
+aside,
+header {
+  padding: 10px;
+}
+header,
+aside {
+  flex: 1;
+  border-radius: 10px;
+}
 .info-warpper {
   display: flex;
   flex-direction: column;
@@ -48,13 +63,28 @@ header {
   gap: 10px;
   width: 100%;
 }
-header,
-aside {
-  flex: 1;
-  border-radius: 10px;
+.menu-wrapper {
+  position: relative;
+  width: 100%;
 }
-aside {
+
+.menu {
+  position: absolute;
   background-color: #ffffff;
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 5px;
+  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.menu li {
+  cursor: pointer;
+  padding: 15px 10px;
+}
+
+.menu li:hover {
+  background-color: #e4e4e4;
 }
 main {
   flex: 3;
@@ -63,21 +93,11 @@ main {
   flex-direction: column;
   border-radius: 10px;
 }
-main,
-aside,
-header {
-  padding: 10px;
-}
-section {
-  background-color: #ffffff;
-  padding: 15px 15px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
 aside {
   display: flex;
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ffffff;
 }
 ul {
   flex: 1;
@@ -117,6 +137,12 @@ button {
 button:hover {
   background-color: #1d2f56;
 }
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
 
 .error {
   display: flex;
@@ -131,32 +157,4 @@ button:hover {
 
 .hidden {
   display: none;
-}
-.menu-wrapper {
-  position: relative;
-  width: 100%;
-}
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-.menu {
-  position: absolute;
-  background-color: #ffffff;
-  width: 100%;
-  padding: 15px 10px;
-  border-radius: 5px;
-  margin: 0;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.menu li {
-  cursor: pointer;
-  padding: 15px 10px;
-}
-
-.menu li:hover {
-  background-color: #e4e4e4;
 }
