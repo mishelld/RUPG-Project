@@ -57,12 +57,17 @@ export default class Renderer {
     let users = JSON.parse(localStorage.getItem("RUPG-users")) || {};
     console.log(users);
     const pageData = { usersData, quote, pokemon, text };
-    users[usersData[0].firstName + " " + usersData[0].lastName] = pageData;
+    const userName = usersData[0].firstName + " " + usersData[0].lastName;
+    users[userName] = pageData;
     localStorage.setItem("RUPG-users", JSON.stringify(users));
+    this.renderLocalStorage();
   }
   renderLocalStorage() {
     this.menu.innerHTML = "";
     const users = JSON.parse(localStorage.getItem("RUPG-users")) || {};
+    if (Object.keys(users).length === 0) {
+      this.menu.innerHTML = "Saved users not found.";
+    }
     for (const user of Object.keys(users)) {
       const li = document.createElement("li");
       li.innerText = user;
