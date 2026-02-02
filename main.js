@@ -3,9 +3,9 @@ import Generator from "./model.js";
 const generator = new Generator();
 const renderer = new Renderer();
 
-const genBtn = document.querySelector("#gen-Btn");
-const saveBtn = document.querySelector("#save-Btn");
-const loadBtn = document.querySelector("#load-Btn");
+const genBtn = document.querySelector("#gen-btn");
+const saveBtn = document.querySelector("#save-btn");
+const loadBtn = document.querySelector("#load-btn");
 let usersData, quote, pokemon, text;
 async function GenerateData() {
   try {
