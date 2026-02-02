@@ -31,13 +31,6 @@ saveBtn.addEventListener("click", () => {
 });
 
 loadBtn.addEventListener("click", () => {
-  const savedPage = localStorage.getItem("RUPG-page");
-  const savedUser = JSON.parse(savedPage);
-  renderer.render(
-    savedUser.usersData,
-    savedUser.quote,
-    savedUser.pokemon,
-    savedUser.text,
-  );
+  renderer.showMenu();
 });
 GenerateData();

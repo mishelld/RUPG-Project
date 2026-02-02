@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #dfe3ee;
   color: #242526;
@@ -23,7 +27,6 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 10px 10px;
-  gap: 10px;
 }
 header,
 aside {
@@ -44,11 +47,13 @@ section {
   background-color: #ffffff;
   padding: 10px 10px;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 aside {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 ul {
   flex: 1;
@@ -96,4 +101,32 @@ button:hover {
 
 .hidden {
   display: none;
+}
+.menu-wrapper {
+  position: relative;
+  width: 100%;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.menu {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 5px;
+  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.menu li {
+  cursor: pointer;
+  padding: 15px 10px;
+}
+
+.menu li:hover {
+  background-color: #e4e4e4;
 }

@@ -82,4 +82,7 @@ export default class Renderer {
       savedUser.text,
     );
   }
+  showMenu() {
+    this.menu.classList.toggle("hidden");
+  }
 }
