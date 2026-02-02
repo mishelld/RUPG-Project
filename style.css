@@ -37,7 +37,6 @@ aside {
   background-color: #ffffff;
 }
 /**********************************************************/
-
 .card,
 section {
   padding: 15px;
@@ -46,6 +45,16 @@ section {
 }
 section {
   background-color: #ffffff;
+}
+
+ul {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
 }
 /**********************************************************/
 
@@ -127,15 +136,6 @@ p {
 /*friends*/
 /**********************************************************/
 
-.friends ul {
-  flex: 1;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin: 0;
-  padding: 0;
-}
 /*pokemon*/
 /**********************************************************/
 
