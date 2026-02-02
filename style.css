@@ -188,10 +188,21 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 10px;
   background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;
+  border: 2px solid red;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.error h1 {
   color: red;
+}
+.error p {
+  color: red;
+  font-size: 1.2rem;
 }
 
 .hidden {
