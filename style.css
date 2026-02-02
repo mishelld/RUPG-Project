@@ -6,6 +6,11 @@ body {
   background-color: #dfe3ee;
   color: #242526;
 }
+.card {
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .container {
   display: flex;
   gap: 10px;
@@ -100,7 +105,8 @@ aside {
 main {
   flex: 3;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 10px;
   flex-direction: column;
   border-radius: 10px;
 }
