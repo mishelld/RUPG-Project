@@ -11,6 +11,7 @@ export default class Renderer {
     this.pokeImage = document.querySelector(".pokemon img");
     this.pokeName = document.querySelector(".pokemon p");
     this.p = document.querySelector(".about p");
+    this.menu = document.querySelector(".menu");
   }
 
   render(usersData, quote, pokemon, text) {
@@ -20,6 +21,7 @@ export default class Renderer {
     this.renderQuote(quote);
     this.renderPokemon(pokemon);
     this.renderText(text);
+    this.renderLocalStorage();
   }
   renderUser(userData) {
     this.userImage.src = userData.picture;
@@ -52,10 +54,32 @@ export default class Renderer {
     this.errorp.innerText = error;
   }
   saveUserPage(usersData, quote, pokemon, text) {
-    localStorage.clear();
     let users = JSON.parse(localStorage.getItem("RUPG-users")) || {};
+    console.log(users);
     const pageData = { usersData, quote, pokemon, text };
     users[usersData[0].firstName + " " + usersData[0].lastName] = pageData;
     localStorage.setItem("RUPG-users", JSON.stringify(users));
+  }
+  renderLocalStorage() {
+    this.menu.innerHTML = "";
+    const users = JSON.parse(localStorage.getItem("RUPG-users")) || {};
+    for (const user of Object.keys(users)) {
+      const li = document.createElement("li");
+      li.innerText = user;
+      li.addEventListener("click", () => {
+        this.loadUserPage(user);
+      });
+      this.menu.appendChild(li);
+    }
+  }
+  loadUserPage(user) {
+    const users = JSON.parse(localStorage.getItem("RUPG-users")) || {};
+    const savedUser = users[user];
+    this.render(
+      savedUser.usersData,
+      savedUser.quote,
+      savedUser.pokemon,
+      savedUser.text,
+    );
   }
 }
